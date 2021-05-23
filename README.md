@@ -9,5 +9,6 @@ Deployed here: https://to-do-react-b6490.web.app/
 
 ![image](https://user-images.githubusercontent.com/63950523/119271012-3af7a300-bc08-11eb-9011-ebe0f979087a.png)
 
-![image](https://user-images.githubusercontent.com/63950523/119271720-5dd78680-bc0b-11eb-9401-ac07f8f485f4.png)
+![image](https://user-images.githubusercontent.com/63950523/119271926-6e3c3100-bc0c-11eb-9ceb-e3822edfd8db.png)
+
 
