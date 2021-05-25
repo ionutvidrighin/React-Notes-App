@@ -8,8 +8,9 @@ BackEnd with Firebase
 Deployed here: https://notes-app-2cdfa.web.app/
 Currently not optimized for tablets & mobile devices
 
-![image](https://user-images.githubusercontent.com/63950523/119271012-3af7a300-bc08-11eb-9011-ebe0f979087a.png)
+![image](https://user-images.githubusercontent.com/63950523/119560817-1688fb80-bdad-11eb-9045-01127828f9a6.png)
 
-![image](https://user-images.githubusercontent.com/63950523/119271926-6e3c3100-bc0c-11eb-9ceb-e3822edfd8db.png)
+![image](https://user-images.githubusercontent.com/63950523/119560987-4b954e00-bdad-11eb-9ca1-46050a2f8890.png)
+
 
 
