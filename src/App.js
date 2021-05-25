@@ -1,7 +1,7 @@
 import './App.scss';
 import Avatar from '@material-ui/core/Avatar';
 import AppLogo from './icons/app-logo.png';
-import MyDayIcon from './icons/my_day.png';
+import ThemeIcon from './icons/theme.jpg';
 import HomeIcon from './icons/home.png';
 import FoodBagIcon from './icons/groceries.png';
 import WorkIcon from './icons/work.png';
@@ -10,7 +10,7 @@ import MoviesIcon from './icons/movies.png';
 import FamilyIcon from './icons/family.png';
 import TravelIcon from './icons/travel.png';
 
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import ForHome from './components/ForHome';
 import Groceries from './components/Groceries';
 import Work from './components/Work';
@@ -22,6 +22,8 @@ import Travel from './components/Travel';
 function App() {
 
   const [appWelcome, setAppWelcome] = useState(false);
+  const [appTheme, setAppTheme] = useState(false);
+  const [themeColor, setThemeColor] = useState("");
   const [forHome, setForHome] = useState(false);
   const [grocery, setGrocery] = useState(false);
   const [work, setWork] = useState(false);
@@ -80,23 +82,37 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="to-do-menu">
-          <div className="profile">
+        <div className={`to-do-menu ${themeColor === 'black' ? `black-theme`: 
+                                    themeColor === 'blue' ? `blue-theme` : 
+                                    themeColor === 'green' ? `green-theme` : 
+                                    themeColor === 'yellow' ? `yellow-theme`: ""}`}>
+          <div 
+            className="profile" 
+            style={themeColor === 'blue' || themeColor === 'green' || themeColor === 'yellow' ? {border: '1px solid rgba(255, 255, 255, 0.4)'} : {border: 'none'}}>
             <Avatar className="avatar" src={AppLogo}/>
-            <div className="date-hour">
+            <div style={themeColor === 'black' ? {color: 'white'} : {color: 'black'}} className="date-hour">
               <p>{day} {actualMonth} {year}</p>
               <p>{hour}:{minute}:{seconds}</p>
             </div>
           </div>
 
           <div className="to-do-rooms">
-            <div className="room" >
-              <img id="day" src={MyDayIcon} alt="" />
-              <span> My Day </span>
+            <div className="theme" onClick={() => setAppTheme(!appTheme)}>
+              <div className={`theme-colors ${appTheme ? "show-theme-colors" : "" }`}>
+                <span onClick={() => setThemeColor("black")} className="color"></span>
+                <span onClick={() => setThemeColor("blue")} className="color"></span>
+                <span onClick={() => setThemeColor("green")} className="color"></span>
+                <span onClick={() => setThemeColor("yellow")} className="color"></span>
+              </div>
+
+              <div className="theme-menu">
+                <img className={appTheme ? `rotate-icon` : ""} src={ThemeIcon} alt="theme" />
+                <span> App Theme </span>
+              </div>
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(true)
@@ -112,7 +128,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)
@@ -128,7 +144,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)
@@ -144,7 +160,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)
@@ -160,7 +176,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)
@@ -176,7 +192,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)
@@ -192,7 +208,7 @@ function App() {
             </div>
 
             <div 
-              className="room" 
+              className={`room  ${themeColor === 'black' ? 'black-menu-options' : ""}`} 
               onClick={() => {
                 setAppWelcome(true);
                 setForHome(false)

@@ -71,7 +71,7 @@ const Groceries = ({weekday, month}) => {
 
             <div className="main-content">
                 <span className="notes-sum">
-                    You currently have <span>{getNotes.length}</span> notes
+                You currently have <span>{getNotes.length}</span> note<span className={getNotes.length <= 1 ? "hide" : ""}>s</span>
                 </span>
                 <input 
                     className="search" 

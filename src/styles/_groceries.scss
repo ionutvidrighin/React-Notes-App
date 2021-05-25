@@ -51,8 +51,13 @@
             font-family: 'KoHo', sans-serif;
 
             span {
-                color: rgb(8, 167, 106);
-                font-weight: bold;
+                &:first-child {
+                    color: rgb(1, 158, 98);
+                    font-weight: bold;
+                }
+            }
+            .hide {
+                opacity: 0;
             }
         }
 

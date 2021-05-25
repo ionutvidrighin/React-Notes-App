@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,400;0,500;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
 
+
 .App {
   width: 100%;
   height: 100vh;
   display: grid;
   place-items: center;
+  transition: 5s ease;
 
   .container {
     width: 60%;
@@ -16,6 +18,22 @@
     -webkit-box-shadow: 0px 0px 9px 3px rgba(176,176,176,1);
     -moz-box-shadow: 0px 0px 9px 3px rgba(176,176,176,1);
     box-shadow: 0px 0px 9px 3px rgba(176,176,176,1);
+
+    .black-theme {
+      background-color: rgb(65, 65, 65) !important;
+    }
+
+    .blue-theme {
+      background-color: rgb(184, 202, 255) !important;
+    }
+
+    .green-theme {
+      background-color: rgb(110, 194, 173) !important;
+    }
+
+    .yellow-theme {
+      background-color: rgb(211, 230, 126) !important;
+    }
 
     .to-do-menu {
       height: 100%;
@@ -65,6 +83,96 @@
         height: 85%;
         display: flex;
         flex-direction: column;
+
+        .theme {
+          height: 4rem;
+          border-bottom: 1px solid rgba(48, 183, 245, 0.11);
+          font-family: 'KoHo', sans-serif;
+          font-size: .8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          .theme-colors {
+            height: 2rem;
+            width: 100%;
+            background-color: rgb(240, 240, 240);
+            border-radius: .3rem .3rem 0 0;
+            transition: transform 1s ease;
+            transform: translateY(100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .color {
+              height: 84%;
+              width: 12%;
+              background-color: salmon;
+              border-radius: 50%;
+              margin: 0 .5rem;
+              z-index: 2;
+              &:hover {
+                cursor: pointer;
+              }
+
+              &:first-child {
+                background-color: rgb(65, 65, 65);
+              }
+              &:nth-child(2) {
+                background-color: rgb(184, 202, 255);
+              }
+              &:nth-child(3) {
+                background-color: rgb(110, 194, 173);
+              }
+              &:nth-child(4) {
+                background-color: rgb(211, 230, 126);
+              }
+            }
+          }
+
+          .show-theme-colors {
+            transform: translateY(-2%);
+            transition: transform 1s ease;
+          }
+
+          .theme-menu {
+            z-index: 1;
+            margin-bottom: .5rem;
+            width: 100%;
+            height: 2rem;
+            display: grid;
+            gap: .5rem;
+            grid-template-rows: none;
+            grid-template-columns: .8fr 2fr;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            background-color: rgb(240, 240, 240);
+            border-radius: 0 0 .3rem .3rem;
+            &:hover {
+              cursor: pointer;
+            }
+            
+            img {
+              justify-self: center;
+              width: 1.7rem;
+              transition: transform 1.5s ease;
+            }
+
+            .rotate-icon {
+              transform: rotate(180deg);
+            }
+          }
+          
+        }
+
+        .black-menu-options {
+          background-color: rgba(255,255,255,0.1);
+          border-radius: .5rem;
+        }
         
         .room {
           height: 7vh;
@@ -75,6 +183,7 @@
           align-items: center;
           user-select: none;
           transition: .3s ease;
+          margin: .3rem 0;
           &:hover {
             border-radius: .5rem;
             background-color: rgb(240, 240, 240);
